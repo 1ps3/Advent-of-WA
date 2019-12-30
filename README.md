@@ -10,7 +10,7 @@ Units are an integral part of WoW's API. They're used as a method of labeling ch
 
 Once again we will be using an `every frame` status trigger though this time we will be using the two Unit functions in our return instead of true. We want to create an aura that triggers when our max health and current health are the same, so we will be calling the two unit functions using the player unit like so `UnitHealth("player")` and `UnitHealthMax("player")`, but we also want to compare the two of them, so we will use `==` to do so. So we will be returning `UnitHealth("player") == UnitHealthMax("player")`, because comparing is a booldean, this will return either `true` or `false` depending on our current health and will trigger when our health is at 100%.
 # Project 2: Events. 
-Events are notifications from the client that something has changed in game. There are events for almost everything in the entire game To understand the wow enviroment you must first understand the event system that's put in place to help addons get the
+Events are a crucial part of WoW's API they are essentially notifications from the client that something has changed in game. There are events for almost everything in the entire game To understand the wow enviroment you must first understand the event system that's put in place to help addons get the
 information they require at times when the client belives is necessary. Events exist for most things in the game, everything
 from your health changing to adding a friend in game. There are lists of events that can be found at (event list here), but 
 for the purposes of this tutorial we'll only be using a single event, `PLAYER_REGEN_ENABLED`. This event is
