@@ -1,6 +1,28 @@
 ## Advent-of-WA
+# Project 1.1: Printing.
+Useful Links: https://wow.gamepedia.com/MACRO_script
+Apparently printing "Hello World" as the first thing you do when working with a language is a thing so we should probably do the same here too. To do this we'll be utilizing slash commands to run code. The slash command to run code is pretty simple, it's simply `/run` or `/script` these will run and execute the code after the command. The other useful function we'll be using is the print function, named `print()`, print will print anything passed to it. So we'll be printing the string "Hello World".
+
+# Solution
+`/run print("Hello World")`
+
+# Project 1.3: Functions.
+# Useful Links: https://www.lua.org/pil/5.html
+WeakAuras expects a single function for a custom trigger (You can find more on functions <here>), in Lua return is used to end a function and return some kind of variable, string or table, there is also implicit return at the end of any function, so you do not need to use one if your function ends naturally. To understand functions we will once again be using WoW's run slash command. Functions can be declared be calling either, `function name ()` or `name = function()`. Both of these lines will save a function called `name` for us to use in our code. The print in part 1.1 we were using to output things into chat is a function provided by Lua. Functions require an `end` on the last line to end the function call. To run a function simply call it like so `name()`, this will run the function code block.
+
+In this example we will be using a function to print "Hello World" instead of directly calling print. By writing the function in the /run command and placing a print inside of it, we then will call it after we end the function to run it and print
+
+# Solution
+`/run function a() print("Hello World") end a()`
+
+# Project 1.4: Function Parameters. 
+Much like other langagues, things can be passed into functions as parameters. To do this in Lua you would simply place the parameters inside of the brackets like so. `function a(var1, var2, var3)` this will allow us to pass anything into the three parameters and use them inside the function by calling `var1`, `var2` and `var3`. Using this info we can get out function to print anything we'd like. First we will have to delcare a variable and then create a function which passes at least a single parameter, then call that function with the variable like so `a(myVariable)`. 
+
+# Solution
+`/run myVariable = true function a(var1) print(var1) end a(myVariable)`
+  
 # Project 1: Triggers. 
-First and foremost to get working in WeakAuras you must understand it's core, the trigger system. Triggers determine whether or not an aura is to display itself. WeakAuras expects a single function for a custom trigger (You can find more on functions <here>), in Lua funa return is used to end a function and return a variable, implicit return at the end of any function, so you do not need to use one if your function ends naturally, without returning any value. Custom triggers rely on this return determine whether or not they are to trigger. In Lua anything that isn't `false` or `nil` will return as `true`. 
+First and foremost to get working in WeakAuras you must understand it's core, the trigger system. Triggers determine whether or not an aura is to display itself. WeakAuras expects a single function for a custom trigger (You can find more on functions <here>), in Lua return is used to end a function and return some kind of variable, string or table, there is also implicit return at the end of any function, so you do not need to use one if your function ends naturally. Custom triggers rely on this return determine whether or not they are to trigger. In Lua anything that isn't `false` or `nil` will return as `true`. 
 
 In this first project we will be making an aura that simply remains triggered all the time. The this aura we will be using a custom status trigger that checks on `every frame`. Idealy we wouldn't be using an every frame trigger to run code, though this is a small amount of code and is for the purposes of this tutorial. Later projects will go into using other methods such as events. 
 
